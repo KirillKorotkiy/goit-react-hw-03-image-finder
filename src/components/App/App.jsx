@@ -59,11 +59,14 @@ export class App extends React.Component {
   };
 
   changeURL = (value) => {
+    const { search } =this.state
     this.setState(prevState => ({
       index: prevState.index + value,
-      largeImageURL: this.state.search[this.state.index].largeImageURL,
+      largeImageURL: search[prevState.index + value].largeImageURL,
     }));
   };
+
+
 
   findCurrentIndex = () => {
     const index = this.state.search
